@@ -11,4 +11,8 @@ Install http://pyserial.sourceforge.net/ with apt and plug in the receiver.
 To run execute "sudo python raspberry-pi-electricity-monitor.py &" or add this to /etc/rc.local to run at boot.
 Visit your pi in a browser to see the data.
 
-Thanks to http://dygraphs.com/ for an awesome library and http://www.raspberrypi.org/ for the great hardware
+Thanks to http://dygraphs.com/ for an awesome library and http://www.raspberrypi.org/ for the great hardware.
+
+MIT licensed
+
+See also: http://electroncastle.com/wp/?p=1808
