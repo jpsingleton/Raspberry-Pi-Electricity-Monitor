@@ -1,5 +1,6 @@
 # Software for monitoring the electricity consumption of a home with a Raspberry Pi
-# James Singleton 2013 - http://unop.co.uk - https://github.com/jpsingleton
+# James Singleton 2013 - 2015 - https://unop.uk - https://github.com/jpsingleton
+# MIT licensed
 
 import serial
 import struct
