@@ -1,3 +1,7 @@
+# Monitoring electricity use with a Maplin monitor, Raspberry Pi and emoncms
+# James Singleton 2016 - https://unop.uk - https://github.com/jpsingleton
+# MIT licensed
+
 import serial
 import struct
 import datetime
