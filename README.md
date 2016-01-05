@@ -5,13 +5,13 @@ Software for monitoring the electricity consumption of a home with a Raspberry P
 
 Full write up: [unop.uk/dev/raspberry-pi-electricity-monitor](https://unop.uk/dev/raspberry-pi-electricity-monitor/)
 
-Copy the www folder to /var for httpd to host and the python file to anywhere.
-Install pyserial with apt and plug in the receiver.
+Copy the `www` folder to `/var` for httpd to host and the python file to anywhere.
+Install `pyserial` with `apt` and plug in the receiver.
 
-To run execute "sudo python raspberry-pi-electricity-monitor.py &" or add this to /etc/rc.local to run at boot.
+To run execute `sudo python raspberry-pi-electricity-monitor.py &` or add this to `/etc/rc.local` to run at boot.
 Visit your pi in a browser to see the data.
 
-You can also use maplin2emoncms.py to push the data to [emoncms](https://github.com/emoncms/emoncms).
+You can also use `maplin2emoncms.py` to push the data to [emoncms](https://github.com/emoncms/emoncms).
 
 ---
 
