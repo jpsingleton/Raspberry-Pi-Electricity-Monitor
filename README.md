@@ -11,7 +11,9 @@ Install `pyserial` with `apt` and plug in the receiver.
 To run execute `sudo python raspberry-pi-electricity-monitor.py &` or add this to `/etc/rc.local` to run at boot.
 Visit your pi in a browser to see the data.
 
-You can also use `maplin2emoncms.py` to push the data to [emoncms](https://github.com/emoncms/emoncms).
+---
+
+I've added a new script (`maplin2emoncms.py`) which you can use to push the data to [OpenEnergyMonitor](http://openenergymonitor.org) [emoncms](https://github.com/emoncms/emoncms) running on the Pi.
 
 ---
 
