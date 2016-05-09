@@ -1,5 +1,9 @@
-Raspberry-Pi-Electricity-Monitor
+Raspberry Pi Electricity Monitor
 ================================
+
+*Update:* Maplin have discontinued the electricity monitor used here.
+
+---
 
 Software for monitoring the electricity consumption of a home with a Raspberry Pi
 
