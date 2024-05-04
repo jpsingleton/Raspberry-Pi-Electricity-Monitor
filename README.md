@@ -1,11 +1,15 @@
 Raspberry Pi Electricity Monitor
 ================================
 
-*Update:* Maplin have discontinued the electricity monitor used here.
+*Update:* Maplin have discontinued the electricity monitor used here (N94KQ) and Maplin don't even exist now.
+
+I've added a basic Python 3 version (`N94KQ-basic-python3-console-logger.py`) that outputs to the console (if you set `PYTHONUNBUFFERED=true`).
+
+There is also a Python 3 port of the original version (thanks to Dave Cutliffe).
 
 ---
 
-Software for monitoring the electricity consumption of a home with a Raspberry Pi
+Software for monitoring the electricity consumption of a home with a Raspberry Pi (or other Linux machine) and a Maplin electricity monitor (N94KQ).
 
 Full write up: [unop.uk/dev/raspberry-pi-electricity-monitor](https://unop.uk/dev/raspberry-pi-electricity-monitor/)
 
