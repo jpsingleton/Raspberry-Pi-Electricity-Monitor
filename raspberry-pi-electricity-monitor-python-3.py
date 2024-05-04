@@ -6,12 +6,12 @@ import datetime
 import struct
 import time
 
-# sudo apt-get install python-serial
+# sudo apt-get install python3-serial
 import serial
 
 ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
 s2 = 'aa0200ad'
-h2 = s2.decode('hex')
+h2 = bytes.fromhex(s2)
 
 fixedThreshold = 15
 percentThreshold = 10
@@ -29,28 +29,29 @@ while True:
 	try:
 		ser.write(h2)
 		data = ser.read(200)
-		watts = struct.unpack('<H', data[13:15])[0]
+		# Note, location in the data can vary by unit. Receivers can support multiple transmitters.
+		# You may want to use the original values from the other files ([13:15]).
+		watts = struct.unpack('<H', data[125:127])[0]
 		if (watts > 0 and watts < maxValue):
-			print >> fRaw, datetime.datetime.now().strftime(dateString), ',', watts
+			print(datetime.datetime.now().strftime(dateString), ',', watts, file=fRaw)
 			fRaw.flush()
 					
 			deltaF = watts - lastValueF
 			if (deltaF > fixedThreshold or deltaF < -fixedThreshold):
-				print >> fFixed, datetime.datetime.now().strftime(dateString), ',', lastValueF
+				print(datetime.datetime.now().strftime(dateString), ',', lastValueF, file=fFixed)
 				time.sleep(1)
-				print >> fFixed, datetime.datetime.now().strftime(dateString), ',', watts
+				print(datetime.datetime.now().strftime(dateString), ',', watts, file=fFixed)
 				fFixed.flush()
 				lastValueF = watts
 			
 			deltaP = watts - lastValueP
 			threshold = lastValueP / percentThreshold
 			if (deltaP > threshold or deltaP < -threshold):
-				print >> fPercent, datetime.datetime.now().strftime(dateString), ',', lastValueP
+				print(datetime.datetime.now().strftime(dateString), ',', lastValueP, file=fPercent)
 				time.sleep(1)
-				print >> fPercent, datetime.datetime.now().strftime(dateString), ',', watts
+				print(datetime.datetime.now().strftime(dateString), ',', watts, file=fPercent)
 				fPercent.flush()
 				lastValueP = watts
 	except:
 		pass
 	time.sleep(7)
-
